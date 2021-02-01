@@ -1,4 +1,5 @@
 # JestUnitTest
+    * https://github.com/simpletut/Testing-React-Redux-with-Jest-and-Enzyme
 
 ## Init in react app
     * yarn add -D enzyme enzyme-adapter-react-16 jest jest-enzyme

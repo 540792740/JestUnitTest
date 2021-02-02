@@ -4,7 +4,7 @@ export default class Search extends Component {
     constructor(props){
         super(props)
         this.state = {
-            value: "qui%20est%20esse"
+            value: "qui est esse"
         }
     }
     inputHandler(e){

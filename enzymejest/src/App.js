@@ -1,9 +1,8 @@
-import Header from "./components/Header/Header";
-import './app.scss';
+// import Header from "./components/Header/Header";
+// import './app.scss';
 import Search from "./components/Search";
 import Searchbutton from "./components/Searchbutton";
 import Searchtable from "./components/Searchtable";
-
 import React, { Component } from 'react'
 
 export default class App extends Component {
@@ -13,7 +12,7 @@ export default class App extends Component {
       title : 'title',
       content : "content",
       getData: false,
-      inputValue: ""
+      inputValue: "qui est esse"
     }
   }
 
@@ -21,8 +20,8 @@ export default class App extends Component {
     if(this.state.getData){
       let value = this.state.inputValue;
       value = value.split(" ");
+      value = value.join("%20")
       console.log("value",value)
-
       const apiUrl = 'http://jsonplaceholder.typicode.com/posts?title=' + this.state.inputValue;
       console.log(apiUrl)
       
@@ -54,8 +53,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <Header/>
+      <div style={{textAlign:"center"}}>
+        {/* <Header/> */}
         <Search inputChange={(e)=>this.inputChange(e)}></Search>
         <Searchbutton buttonClick={()=>this.buttonClick()} ></Searchbutton>
         <Searchtable  title={this.state.title}

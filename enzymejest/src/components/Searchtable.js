@@ -6,14 +6,14 @@ export default class Searchtable extends Component {
     }
     render() {
         return (
-            <table>
-                <tr>
+            <table style={{"border": "1px solid black"}}>
+                <tr style={{"border": "1px solid black"}}>
                     <th>Title</th>
                     <th>Content</th>
                 </tr>
-                <tr>
-                    <td>{this.props.title}</td>
-                    <td>{this.props.content}</td>
+                <tr style={{"border": "1px solid black"}}>
+                    <td style={{"border": "1px solid black"}}>{this.props.title}</td>
+                    <td style={{"border": "1px solid black"}}>{this.props.content}</td>
                 </tr>
             </table>
         )

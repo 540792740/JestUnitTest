@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from "enzyme";
 import Headlines from './Headlines';
 import { findDataAttribute } from "../../Utils/index"; 
+import checkPropypes from "check-prop-types"
 
 const setUp = (props={})=>{
  const component = shallow(<Headlines {...props}/>);
@@ -35,6 +36,23 @@ describe("Headlines component",()=>{
             const h1 = findDataAttribute(wrapper, 'header');
             expect(h1.length).toBe(1);
         });
+
+        it("should not throw error",()=>{
+            const props = {
+                header: "header",
+                desc : "descibe",
+                tempArr: [{
+                    fName: 'Test fName',
+                    lName: 'Test lName',
+                    email: 'test@email.com',
+                    age: 23,
+                    onlineStatus: false
+                }]
+            }
+            const propsErr = checkPropypes(Headlines.propTypes, props, 'props', Headlines.name);
+            expect(propsErr).toBeUndefined(); 
+
+        })
         
 
     });

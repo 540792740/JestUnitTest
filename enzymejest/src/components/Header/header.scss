@@ -1,7 +1,20 @@
 .header{
     color: red;
-
-    .logo{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 0 10px;
+    
+    .wrap{
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 980px;
         
+        .logo{
+
+        }
     }
+
+   
 }

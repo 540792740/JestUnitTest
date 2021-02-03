@@ -1,8 +1,7 @@
 import React from 'react';
 import { shallow } from "enzyme";
 import Headlines from './Headlines';
-import { findDataAttribute } from "../../Utils/index"; 
-import checkPropypes from "check-prop-types"
+import { findDataAttribute, checkProps } from "../../Utils/index"; 
 
 const setUp = (props={})=>{
  const component = shallow(<Headlines {...props}/>);
@@ -49,7 +48,7 @@ describe("Headlines component",()=>{
                     onlineStatus: false
                 }]
             }
-            const propsErr = checkPropypes(Headlines.propTypes, props, 'props', Headlines.name);
+            const propsErr = checkProps(Headlines.propTypes, props);
             expect(propsErr).toBeUndefined(); 
 
         })

@@ -5,6 +5,8 @@ import React, { Component } from 'react';
 import Headline from "./components/HeadLines/Headlines";
 import CounterList from "./components/Counter/CounterList";
 import User from "./components/User/User";
+import MyApp from './components/context/MyApp';
+import {AuthProvider} from './components/context/AuthProvider'
 
 const tempArr = [{
   fName: 'Joe',
@@ -21,11 +23,16 @@ export default class App extends Component {
       <div style={{textAlign:"center"}} data-test="div">
         <Header/>
         {/* <CallTable></CallTable> */}
-        <section className="main">
+        {/* <section className="main">
           <Headline header="Posts" desc="Click the button to render posts!" tempArr={tempArr}/>
         </section>
         <CounterList />
-        <User />
+        <User id={1}/> */}
+        {/* <ParentContext /> */}
+
+        <AuthProvider>
+          <MyApp />
+        </AuthProvider>
       </div>
     )
   }

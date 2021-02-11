@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-
-const API_URL = (id)=> `https://jsonplaceholder.typicode.com/user/${id}`
-const fetchUser = (id) => fetch(API_URL(id)).then(data=>{data.json()})
+import {fetchUser} from "./Api";
 
 export default class User extends Component {
     constructor(props){
@@ -12,15 +10,17 @@ export default class User extends Component {
     }
 
     componentDidMount(){
-        fetchUser(this.props.id).then(user => this.setState({user}))
+        fetchUser(this.props.id).then(user => {
+            this.setState({user})
+    })
     }
 
     render() {
 
         return this.state.user === null ? (<p>Loading</p>) : (
             <div>
-                <h4>{this.state.user.name}</h4>
-                <p>URL: {this.state.user.website}</p>
+                <h4>{this.state.user.title}</h4>
+                <p>ID: {this.state.user.id}</p>
             </div>
         )
     }

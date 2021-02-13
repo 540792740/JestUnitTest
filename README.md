@@ -65,6 +65,12 @@
             name: PropTypes.string
        };
        shallow(<MyComponentWithTheme />, {context: {name: "React is Simple"}}).setContext({ name: 'some new context'}); 
+    3. HOC wrapper component, pass to child context:
+        mount(component, {
+            context: {muiTheme}, 
+            childContextTypes: {muiTheme: PropTypes.object}
+        });
+
 ```
 ## Private Router
  * https://gist.github.com/Aebrathia/0dc01cc86268b194e39ba567ec38dd9a
@@ -121,7 +127,10 @@
 ```
 
 ## Api return  value
-    * afterEach(()=>jest.cleanAllMocks())
-    
+    * afterEach(()=>jest.clearAllMocks())
+
     * jest.spyOn(api, 'method').mockRejectedValue()
     * jest.spyOn(api, 'method').mockResolvedValue()
+
+## set props
+    * component.setProps({item:'12'})

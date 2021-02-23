@@ -15,6 +15,11 @@
 ## Some idea:
     * 
 
+## Method test with instance
+    * const wrapper = shallow(<Stateless />);
+      const instance = wrapper.instance();
+      instance.method();
+
 ## Mount Shallow, Render
     * Always begin with shallow
     * If componentDidMount or componentDidUpdate should be tested, use mount
@@ -41,6 +46,11 @@
     * expect(wrapper.find('p').at(2).text()).toBe('');
     * const button = component.find("button")
         button.simulate('click');
+    * simulate('inputChange', {}, '12')
+
+## find:
+    * component.find('p').text();
+    * component.find(`[data-test='${attr}']`)
 
 ## Snapshot
 ```
@@ -70,6 +80,9 @@
             context: {muiTheme}, 
             childContextTypes: {muiTheme: PropTypes.object}
         });
+    4. for inner context: shallow with dive:
+        mockContext = {text:'abc'}
+        Context.Consumer = jest.fn((props)=> props.children({...mockContext}))
 
 ```
 ## Private Router
@@ -134,3 +147,9 @@
 
 ## set props
     * component.setProps({item:'12'})
+
+## keydown keyup
+    * component.simulate('click', {
+        key:'Enter',
+        target:{value:'12'}
+      })

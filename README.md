@@ -4,6 +4,7 @@
 ## Init in react app(old version)
     * npm install enzyme enzyme-adapter-react-16 jest jest-enzyme -D (在开发者环境中, 不上线)
     * npm test -- --coverage  --watchAll
+    * yarn test --coverage --watchAll
 
 ## Jest Advantage:  
     * fast

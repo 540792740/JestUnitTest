@@ -4,6 +4,7 @@ import CallTable from "./components/APICallTable/CallTable";
 import React, { Component } from 'react';
 import Headline from "./components/HeadLines/Headlines";
 import CounterList from "./components/Counter/CounterList";
+import ChartTest from "./components/chartJs/ChartTest";
 import User from "./components/User/User";
 import MyApp from './components/context/MyApp';
 import {AuthProvider} from './components/context/AuthProvider'
@@ -17,11 +18,10 @@ const tempArr = [{
 }];
 
 export default class App extends Component {
-  
   render() {
     return (
-      <div style={{textAlign:"center"}} data-test="div">
-        <Header/>
+      <div >
+        {/* <Header/> */}
         {/* <CallTable></CallTable> */}
         {/* <section className="main">
           <Headline header="Posts" desc="Click the button to render posts!" tempArr={tempArr}/>
@@ -29,10 +29,7 @@ export default class App extends Component {
         <CounterList />
         <User id={1}/> */}
         {/* <ParentContext /> */}
-
-        <AuthProvider>
-          <MyApp />
-        </AuthProvider>
+        <ChartTest/>
       </div>
     )
   }

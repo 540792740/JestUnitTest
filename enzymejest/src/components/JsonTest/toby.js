@@ -18,3 +18,14 @@ for(let item in checkSame){
 }
 
 console.log(res)
+
+
+
+var _ = require('lodash')
+
+let list = [{"a": 12},{"a": 1}]
+let a = _.filter(list, {'a':1})
+console.log(a);
+
+a = _.find(list, {"a": 12})
+console.log(a);

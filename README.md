@@ -84,8 +84,11 @@
     4. for inner context: shallow with dive:
         mockContext = {text:'abc'}
         Context.Consumer = jest.fn((props)=> props.children({...mockContext}))
-
 ```
+    * Another way:
+        mount(<Context.Provider value={search:jest.fn()}> 
+                <App> 
+              </Context.Provider> )
 ## Private Router
  * https://gist.github.com/Aebrathia/0dc01cc86268b194e39ba567ec38dd9a
 ```

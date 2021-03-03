@@ -56,3 +56,23 @@ app.sort((a, b)=> {
             }
 })
 console.log(app);
+
+
+function solveN(N){
+    const dec2bin = (dec)=>{
+        let result = (dec >>> 0).toString(2) + '';
+        if (result.length % 2 === 1) result = '0' + result;
+        return result;
+    }
+    let binNum = dec2bin(N);
+    let newBin = ''
+    for(let i = 0; i < binNum.length; i = i + 2){
+        newBin = newBin + '' + binNum[i + 1] + '' + binNum[i]
+    }
+    newBin = parseInt(newBin, 2);
+
+    return newBin
+}
+
+solveN(24)
+console.log(solveN(23))

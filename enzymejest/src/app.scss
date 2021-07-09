@@ -14,3 +14,14 @@ body {
     margin: 20px auto 80px;
     padding: 0 10px;
 }
+
+.centerlize{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+.submitButton{
+    float: left;
+}
